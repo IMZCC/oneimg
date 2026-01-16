@@ -8,6 +8,16 @@
 - [雾创岛](https://www.tr0.cn)
 - [打赏赞助](https://www.cv0.cn/Index/Reward.php)
 
+## Demo
+[初春图床v3.0](https://www.ip6s.com)
+
+**默认账号密码**
+``` 默认账号
+admin
+```
+``` 默认密码
+123456
+```
 ## 🐳 Docker 部署
 
 ### 环境要求
@@ -26,7 +36,6 @@ cd oneimg
 ```bash
 docker compose up -d
 ```
-
 3. **访问系统**
 - `http://localhost:8080`
 
@@ -34,6 +43,19 @@ docker compose up -d
 ```bash
 docker compose down
 ```
+
+### 直接使用镜像
+```bash
+docker run -d \
+--name oneimg \
+-p 8080:8080 \
+-v /data/oneimg:/app/data \
+--restart unless-stopped \
+onexru/oneimg-oneimg
+```
+
+### 获取TelegramID
+使用机器人[@userinfobot](https://t.me/userinfobot) 发送/start 即可获取TelegramID
 
 ### 数据持久化
 系统数据和上传的图片通过 Docker 数据卷保持持久化：
